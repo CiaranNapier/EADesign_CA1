@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asyncdoor-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asyncdoor
+  template:
+    metadata:
+      labels:
+        app: asyncdoor
+    spec:
+      containers:
+        - name: asyncdoor
+          args: ["1", "10", "redis-service:6379"]
+          image: napes/asyncdoor:v1

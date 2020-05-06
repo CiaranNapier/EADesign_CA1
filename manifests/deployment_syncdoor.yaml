@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: syncdoor-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: syncdoor
+  template:
+    metadata:
+      labels:
+        app: syncdoor
+    spec:
+      containers:
+        - name: syncdoor
+          image: napes/syncdoor:v1
+          args: ["news", "http://nf-service:8888", "weather", "http://wf-service:8888"]
+          ports:
+          - containerPort: 8080	  
+        - name: syncdoor-redis
+          image: redis
+          ports:
+          - containerPort: 6379
+
