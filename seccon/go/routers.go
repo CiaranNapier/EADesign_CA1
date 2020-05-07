@@ -39,4 +39,11 @@ var routes = Routes{
 		"/",
 		Index,
 	},
+
+	Route{
+		"GetSyncDoorCountFromURL",
+		"GET",
+		"/syncdoor",
+		GetSyncDoorCountFromURL,
+	},
 }

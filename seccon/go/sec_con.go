@@ -1,10 +1,13 @@
 package seccon
 
 import (
-	"net/http"
 	"html/template"
-	"time"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
 	"strconv"
+	"time"
 )
 
 var counts map[string]int = make(map[string]int)
@@ -17,7 +20,7 @@ func ProcessMessage(channel_name string, msg_content string) {
 
 func SetUpSecConPubSub(redis_url string, interval time.Duration, wait time.Duration, channel_names []string) {
 
-	channelNames = channel_names;
+	channelNames = channel_names
 	SetUpPubSub("security-console", redis_url, interval, wait, channel_names, ProcessMessage)
 }
 
@@ -38,11 +41,30 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	inserts := struct {
-    		TableInnerHTML template.HTML	
+		TableInnerHTML template.HTML
 	}{
 		template.HTML(GetTableInnerHTML()),
 	}
 	t, _ := template.ParseFiles("console.html")
-	
+
 	t.Execute(w, inserts)
+}
+
+func GetSyncDoorCountFromURL(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	resp, err := http.Get(os.Args[1])
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatalln(err)
+
+	}
+
+	log.Println(string(body))
 }
