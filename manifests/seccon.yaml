@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: asyncdoorseccon-service
+  name: seccon-service
   labels:
-    app: asyncdoorseccon-service
+    app: seccon-service
 spec:
   ports:
   - port: 9090
@@ -11,27 +11,27 @@ spec:
     targetPort: 8080
     nodePort: 31080
   selector:
-    app: asyncdoorseccon
+    app: seccon
   type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: asyncdoorseccon-deployment
+  name: seccon-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: asyncdoorseccon
+      app: seccon
   template:
     metadata:
       labels:
-        app: asyncdoorseccon
+        app: seccon
     spec:
       containers:
-        - name: asyncdoorseccon
-          image: napes/asyncdoorseccon:v1
-          args: ["redis-service:6379", "2000", "50", "asyncdoor"]
+        - name: seccon
+          image: napes/seccon:v1
+          args: ["redis-service:6379", "2000", "50", "door1"]
           ports:
           - containerPort: 8080	  
    
