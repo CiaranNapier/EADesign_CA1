@@ -31,7 +31,7 @@ spec:
       containers:
         - name: syncdoorseccon
           image: napes/syncdoorseccon:v1
-          args: ["http://syncdoor-service:9090/syncdoor?style=plain", "redis-service:6379", "2000", "50", "asyncdoor"]
+          args: ["http://syncdoor-service:9090/syncdoor?style=plain", "redis-service:6379", "2000", "50", ""]
           ports:
           - containerPort: 8080	  
    
