@@ -38,4 +38,4 @@ done < "$syncinput"
 
 echo "Total sum of 10000 sync requests : ${ssum}" >> ${resultfile}
 savg=$(echo $ssum / 10000 | bc -l)
-echo "Average ASync Time: ${savg}" >> ${resultfile}
+echo "Average Sync Time: ${savg}" >> ${resultfile}
