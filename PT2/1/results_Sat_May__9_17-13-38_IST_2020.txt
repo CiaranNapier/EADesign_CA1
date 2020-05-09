@@ -1,4 +1,4 @@
 Total sum of 10000 async requests : 395.132518
 Average ASync Time: .03951325180000000000
 Total sum of 10000 sync requests : 473.872916
-Average ASync Time: .04738729160000000000
+Average Sync Time: .04738729160000000000
