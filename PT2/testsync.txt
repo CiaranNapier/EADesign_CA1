@@ -1,0 +1,10 @@
+ connect:0.040296s pretransfer:0.040425s starttransfer:0.052933s total:0.052995
+ connect:0.044974s pretransfer:0.045084s starttransfer:0.053870s total:0.053936
+ connect:0.041379s pretransfer:0.041569s starttransfer:0.059817s total:0.059889
+ connect:0.053531s pretransfer:0.053729s starttransfer:0.078727s total:0.078803
+ connect:0.049467s pretransfer:0.049646s starttransfer:0.056754s total:0.056816
+ connect:0.052173s pretransfer:0.052292s starttransfer:0.059271s total:0.059337
+ connect:0.049435s pretransfer:0.049671s starttransfer:0.057927s total:0.057989
+ connect:0.048676s pretransfer:0.048910s starttransfer:0.056976s total:0.057034
+ connect:0.047876s pretransfer:0.047987s starttransfer:0.094299s total:0.094388
+ connect:0.042906s pretransfer:0.043068s starttransfer:0.050491s total:0.050589
