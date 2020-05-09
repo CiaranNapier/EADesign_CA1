@@ -52,6 +52,7 @@ def eades_msvcs_make_graph(rqst):
                     x = request_json['x']
                     y = np.array(request_json['y']).astype(np.float)
 
+                    plt.clf()
                     if request_json['plottype'] == 'bar':
                         if len(x) == len(y):
                             positions = range(len(x))
@@ -99,7 +100,7 @@ def eades_msvcs_make_graph(rqst):
                         
                     buf = io.BytesIO()
                     plt.savefig(buf, format='png')
-                    plt.clf()
+                    
                     
                     storageClient = storage.Client()
                     bucket = storageClient.get_bucket(bucket_name) 
