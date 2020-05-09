@@ -99,6 +99,7 @@ def eades_msvcs_make_graph(rqst):
                         
                     buf = io.BytesIO()
                     plt.savefig(buf, format='png')
+                    plt.clf()
                     
                     storageClient = storage.Client()
                     bucket = storageClient.get_bucket(bucket_name) 
@@ -112,7 +113,7 @@ def eades_msvcs_make_graph(rqst):
                         
                     buf.close()
                     return retVal
-                    plt.clf()
+                    
                 else:
                     return f'ERROR: X or Y or both data not specified'
             else:
