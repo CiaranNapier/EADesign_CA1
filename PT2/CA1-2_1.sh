@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE=$(date | tr ' ' '_')
+DATE=$(date | tr ' ' '_' | tr ':' '-')
 async_endpoint="http://127.0.0.1:61555/"
 sync_endpoint="http://127.0.0.1:61563/syncdoor"
 
