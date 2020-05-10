@@ -8,4 +8,4 @@ asyncavg=$( cat ${resultsfile} | grep "Average ASync Time" | cut -d ':' -f2 | se
 
 
 
-curl -k -H "Content-Type: application/json" -X POST -d "{\"filename\":\"average.png\", \"plottype\":\"bar\", \"x\":[\"Sync\", \"Async\"], \"y\":[\"${syncavg}\", \"${asyncavg}\"], \"ylab\":\"Average Total Response times\"}" "${endpoint}"
+curl -k -H "Content-Type: application/json" -X POST -d "{\"filename\":\"averages.png\", \"plottype\":\"bar\", \"x\":[\"Sync\", \"Async\"], \"y\":[\"${syncavg}\", \"${asyncavg}\"], \"ylab\":\"Average Total Response times\"}" "${endpoint}"
