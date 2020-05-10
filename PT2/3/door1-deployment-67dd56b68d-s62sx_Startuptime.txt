@@ -1,0 +1,1 @@
+Elapsed Startup time for door1-deployment-67dd56b68d-s62sx is : 20

@@ -1,0 +1,1 @@
+Elapsed Startup time for syncdoor-deployment-58db4cc6b4-dt9gj is : 10

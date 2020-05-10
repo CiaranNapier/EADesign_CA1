@@ -1,0 +1,1 @@
+Elapsed Startup time for syncdoorseccon-deployment-cdb84dbc7-mxxcf is : 19
